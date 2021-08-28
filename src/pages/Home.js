@@ -31,7 +31,7 @@ const Home = () => {
       toast("Not able to locate user", { type: "error" });
     }
   };
-  //Put anypage behing login
+  //Put anypage behind login
   if (!context.user?.uid) {
     return <Redirect to="/signin" />;
   }
