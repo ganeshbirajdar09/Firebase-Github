@@ -23,8 +23,10 @@ const Repos = ({ repos_url }) => {
           <div className="text-primary">{repo.name}</div>
           <div className="text-secondary">{repo.language}</div>
           <div className="text-info">{repo.description}</div>
-          <a href={repo.html_url}>
-            <div className="text-info">{repo.html_url}</div>
+          <a href={repo.html_url} target="_blank">
+            <div style={{ overflow: "auto" }} className="text-info">
+              {repo.html_url}
+            </div>
           </a>
         </ListGroupItem>
       ))}
