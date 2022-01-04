@@ -1,22 +1,22 @@
 import React, { useContext, useState } from "react";
-import {
-  Container,
-  Form,
-  Button,
-  FormGroup,
-  Label,
-  Col,
-  Input,
-  Row,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from "reactstrap";
+// import {
+//   Container,
+//   Form,
+//   Button,
+//   FormGroup,
+//   Label,
+//   Col,
+//   Input,
+//   Row,
+//   Card,
+//   CardBody,
+//   CardFooter,
+//   CardHeader,
+// } from "reactstrap";
 
 import firebase from "firebase/app";
 import { UserContext } from "../context/UserContext";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Signup = () => {
@@ -51,54 +51,94 @@ const Signup = () => {
   }
 
   return (
-    <Container className="text-center">
-      <Row>
-        <Col lg={6} className="offset-lg-3 mt-5">
-          <Card>
-            <Form onSubmit={handleSubmit}>
-              <CardHeader className="">Signup here</CardHeader>
-              <CardBody>
-                <FormGroup row>
-                  <Label for="email" sm={3}>
-                    Email
-                  </Label>
-                  <Col sm={9}>
-                    <Input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="provide your email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </Col>
-                </FormGroup>
-                <FormGroup row>
-                  <Label for="password" sm={3}>
-                    Password
-                  </Label>
-                  <Col sm={9}>
-                    <Input
-                      type="password"
-                      name="password"
-                      id="password"
-                      placeholder="your password here"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </Col>
-                </FormGroup>
-              </CardBody>
-              <CardFooter>
-                <Button type="submit" block color="primary">
-                  Sign Up
-                </Button>
-              </CardFooter>
-            </Form>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+    <div>
+      <div className="signin">
+        <div className="signin-container">
+          <h1>Create Account</h1>
+          <form onSubmit={handleSubmit}>
+            <h5>Email</h5>
+            <input
+              name="email"
+              id="email"
+              placeholder="provide your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <h5>Password</h5>
+            <input
+              name="password"
+              id="password"
+              placeholder="your password here"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="signin-btn">
+              Create Account
+            </button>
+          </form>
+          <p>
+            By continuing, you agree to all of our Conditions of Use and Privacy
+            Notice.
+          </p>
+          <p>Need help?</p>
+
+          <p>
+            Already have an account? &nbsp;
+            <Link className="redirect-signin" to="/signin">
+              Sign in
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+    // <Container className="text-center">
+    //   <Row>
+    //     <Col lg={6} className="offset-lg-3 mt-5">
+    //       <Card>
+    //         <Form onSubmit={handleSubmit}>
+    //           <CardHeader className="">Signup here</CardHeader>
+    //           <CardBody>
+    //             <FormGroup row>
+    //               <Label for="email" sm={3}>
+    //                 Email
+    //               </Label>
+    //               <Col sm={9}>
+    //                 <Input
+    //                   type="email"
+    //                   name="email"
+    //                   id="email"
+    //                   placeholder="provide your email"
+    //                   value={email}
+    //                   onChange={(e) => setEmail(e.target.value)}
+    //                 />
+    //               </Col>
+    //             </FormGroup>
+    //             <FormGroup row>
+    //               <Label for="password" sm={3}>
+    //                 Password
+    //               </Label>
+    //               <Col sm={9}>
+    //                 <Input
+    //                   type="password"
+    //                   name="password"
+    //                   id="password"
+    //                   placeholder="your password here"
+    //                   value={password}
+    //                   onChange={(e) => setPassword(e.target.value)}
+    //                 />
+    //               </Col>
+    //             </FormGroup>
+    //           </CardBody>
+    //           <CardFooter>
+    //             <Button type="submit" block color="primary">
+    //               Sign Up
+    //             </Button>
+    //           </CardFooter>
+    //         </Form>
+    //       </Card>
+    //     </Col>
+    //   </Row>
+    // </Container>
   );
 };
 

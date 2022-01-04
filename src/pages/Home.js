@@ -47,7 +47,7 @@ const Home = () => {
               placeholder="Please provide the username"
             />
             <InputGroupAddon addonType="append">
-              <Button onClick={fetchDetails} color="primary">
+              <Button onClick={fetchDetails} color="dark">
                 Fetch User
               </Button>
             </InputGroupAddon>

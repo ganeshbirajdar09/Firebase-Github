@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Repos.css";
 
 import Axios from "axios";
 import { ListGroup, ListGroupItem } from "reactstrap";
@@ -20,11 +21,19 @@ const Repos = ({ repos_url }) => {
     <ListGroup>
       {repos.map((repo) => (
         <ListGroupItem key={repo.id}>
-          <div className="text-primary">{repo.name}</div>
-          <div className="text-secondary">{repo.language}</div>
-          <div className="text-info">{repo.description}</div>
-          <a href={repo.html_url} target="_blank">
-            <div style={{ overflow: "auto" }} className="text-info">
+          <div className="">{repo.name}</div>
+          <div className="text-white">{repo.language}</div>
+          <div className="">{repo.description}</div>
+          <a href={repo.html_url} rel="noreferrer" target="_blank">
+            <div
+              style={{
+                overflow: "auto",
+                overflowWrap: "break-word",
+                textDecoration: "none",
+                color: "#4078c0",
+              }}
+              className="text-info"
+            >
               {repo.html_url}
             </div>
           </a>

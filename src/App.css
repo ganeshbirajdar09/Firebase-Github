@@ -1,3 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
 .ml-auto {
   margin-left: auto;
+}
+body {
+  background-color: red;
+}
+.wrapper {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: #333;
+  color: #ebebd3;
+  position: relative;
+  padding: 1em 0;
+}
+
+header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.svg {
+  font-size: 2.5em;
+  margin-right: 13px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.main-nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background: #464655;
+  height: 0;
+  overflow: hidden;
+}
+
+.main-nav-open {
+  height: auto;
+  position: relative;
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.main-nav li:last-child {
+  border-bottom: none;
+}
+
+.main-nav Link {
+  color: white;
+  display: block;
+  padding: 1em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav Link:hover,
+.main-nav Link:focus {
+  background: #e4b363;
+  color: #464655;
+}
+
+.nav-icon {
+  display: inline-block;
+  font-size: 1.3em;
+  margin-right: 0.5em;
+  text-align: center;
+  width: 1.1em;
+  color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+}
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: 1.3em;
+  right: 0.2em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: #ebebd3;
+  height: 3px;
+  width: 1.75em;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger::after {
+  transform: rotate(90deg) translateY(3px);
+}
+
+@media only screen and (max-width: 800px) {
+  .hello-msg {
+    float: left;
+    clear: left;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin-left: 2em;
+  }
+
+  .main-nav Link {
+    padding: 0;
+    margin-left: 2em;
+  }
+
+  .main-nav Link:hover,
+  .main-nav Link:focus {
+    background: transparent;
+  }
+  .nav-icon {
+    display: inline-block;
+    font-size: 1.3em;
+    margin-right: 0.5em;
+    text-align: center;
+    width: 1.1em;
+    color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+
+    text-decoration: none;
+  }
+  .main-nav li:last-child {
+    border-bottom: none;
+    margin-right: 2em;
+  }
+  .nav-icon:hover {
+    color: #4078c0;
+  }
 }

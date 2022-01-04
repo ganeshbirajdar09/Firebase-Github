@@ -6,7 +6,8 @@ const Footer = () => {
     <Container
       fluid
       tag="footer"
-      className="position-fixed bg-info text-center text-white text-uppercase fixed-bottom p-3"
+      className="position-fixed  text-center text-white text-uppercase fixed-bottom p-3"
+      style={{ background: "#333", fontWeight: "500" }}
     >
       Ganesh github app with firebase
     </Container>

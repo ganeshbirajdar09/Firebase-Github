@@ -1,0 +1,8 @@
+.list-group-item {
+  background: #333;
+  border: 1px solid #fff;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}

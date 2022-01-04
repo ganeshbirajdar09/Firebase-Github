@@ -1,66 +1,72 @@
 import React, { useState, useContext } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarText,
-} from "reactstrap";
 
 import { Link } from "react-router-dom";
+import { GitHub } from "@material-ui/icons";
 
 import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const context = useContext(UserContext);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
-
+  // const toggle = () => setIsOpen(!isOpen);
+  const [isActive, setActive] = useState(false);
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
   return (
-    <Navbar color="info" light expand="md">
-      <NavbarBrand>
-        <Link to="/" className="text-white">
-          Ganesh GitFire app
-        </Link>
-      </NavbarBrand>
-      <NavbarText className="text-white">
-        {context.user?.email ? context.user.email : ""}
-      </NavbarText>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          {context.user ? (
-            <NavItem>
-              <NavLink
-                onClick={() => {
-                  context.setUser(null);
-                }}
-                className="text-white"
-              >
-                Logout
-              </NavLink>
-            </NavItem>
-          ) : (
-            <>
-              <NavItem>
-                <NavLink tag={Link} to="/signup" className="text-white">
+    <header>
+      <div className="wrapper">
+        <h1 className="logo">
+          <span className="github-icon">
+            <GitHub className="svg" />
+          </span>
+          Ganesh<span>GitfireApp&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        </h1>
+        <span className={window.screen.width < 500 ? "hello-msg" : ""}>
+          {context.user?.email
+            ? "Hello👋 " + context.user.email.replace("@gmail.com", "")
+            : ""}
+        </span>
+
+        <nav className={isActive ? "main-nav main-nav-open" : "main-nav"}>
+          {!context.user ? (
+            <ul>
+              <li>
+                <Link to="/signup" className="nav-icon">
                   Signup
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/signin" className="text-white">
+                </Link>
+              </li>
+              <li>
+                <Link to="/signin" className="nav-icon">
                   Signin
-                </NavLink>
-              </NavItem>
-            </>
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <ul>
+              <li>
+                <Link
+                  onClick={() => {
+                    context.setUser(null);
+                  }}
+                  className="nav-icon"
+                >
+                  Logout
+                </Link>
+              </li>
+            </ul>
           )}
-        </Nav>
-      </Collapse>
-    </Navbar>
+        </nav>
+
+        <div
+          onClick={toggleClass}
+          className={isActive ? "menu-toggle open" : "menu-toggle"}
+        >
+          <div className="hamburger"></div>
+        </div>
+      </div>
+    </header>
   );
 };
 
