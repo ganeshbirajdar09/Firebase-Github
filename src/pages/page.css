@@ -1,0 +1,8 @@
+.not-found {
+  text-align: center;
+  background-color: #fff;
+}
+.not-found Link {
+  color: #4979ff;
+  text-decoration: underline;
+}
