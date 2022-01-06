@@ -53,10 +53,6 @@ const Signup = () => {
   }
   return (
     <div className="signin">
-      <Link to="/">
-        <img className="signin-logo" src="" alt="" />
-      </Link>
-
       <div className="signin-container">
         <h1>Sign-In</h1>
         <form onSubmit={handleSubmit}>
@@ -79,7 +75,7 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit" className="signin-btn">
-            Continue
+            Sign In
           </button>
 
           <p>
