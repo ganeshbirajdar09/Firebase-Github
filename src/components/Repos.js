@@ -3,7 +3,6 @@ import "./Repos.css";
 
 import Axios from "axios";
 import { ListGroup, ListGroupItem } from "reactstrap";
-import { Link, Redirect } from "react-router-dom";
 
 const Repos = ({ repos_url }) => {
   const [repos, setRepos] = useState([]);
