@@ -8,9 +8,7 @@
 .ml-auto {
   margin-left: auto;
 }
-body {
-  background-color: red;
-}
+
 .wrapper {
   width: 95%;
   max-width: 1000px;
